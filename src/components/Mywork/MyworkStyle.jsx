@@ -100,15 +100,15 @@ export const Container = styled.section`
       max-width: 400px;
     }
     .flat-button {
-      font-size: 0.7rem; /* Further reduce font size for smaller screens */
-      padding: 4px 8px; /* Adjust padding for smaller buttons */
+      font-size: 0.7rem;
+      padding: 4px 8px; 
     }
     .links ul li a {
       font-size: 0.7rem;
     }
 
     .links ul li a {
-      font-size: 0.7rem;
+      font-size: 1rem;
     }
   
   }
