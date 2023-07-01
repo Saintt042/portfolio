@@ -2,12 +2,12 @@ import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Card from '../Card/Card';
 import { Container } from './MyworkStyle';
-import puss from '../../assets/images/moviebg.png';
-import pus from '../../assets/images/foodbg.png';
-import pusss from '../../assets/images/metabnbbg.png';
-import pusc from '../../assets/images/bg1.png';
-import pussc from '../../assets/images/clipbg.png';
-import pusscc from '../../assets/images/fylobg.png';
+import a from '../../assets/images/moviebg.png';
+import b from '../../assets/images/foodbg.png';
+import c from '../../assets/images/metabnbbg.png';
+import d from '../../assets/images/bg1.png';
+import e from '../../assets/images/clipbg.png';
+import f from '../../assets/images/fylobg.png';
 import bg from "../../assets/images/bg.jpg"
 
 const Mywork = () => {
@@ -28,7 +28,7 @@ const Mywork = () => {
       ),
     },
     {
-      icon: puss,
+      icon: a,
       name: 'Movie Application',
       desc: 'This movie application was built using API from OMDB',
       link: (
@@ -43,7 +43,7 @@ const Mywork = () => {
       ),
     },
     {
-      icon: pusscc,
+      icon: e ,
       name: 'A Landing page',
       desc: 'A great landing page for your website',
       link: (
@@ -59,7 +59,7 @@ const Mywork = () => {
       ),
     },
     {
-      icon: pussc,
+      icon: f, 
       name: 'Landing Page',
       desc: 'A Clipboard Landing page',
       link: (
@@ -74,7 +74,7 @@ const Mywork = () => {
       ),
     },
     {
-      icon: pusc,
+      icon: d,
       name: 'LinkTree Card',
       desc: 'A linktree Card',
       link: (
@@ -89,7 +89,7 @@ const Mywork = () => {
       ),
     },
     {
-      icon: pus,
+      icon: b,
       name: 'Food App',
       desc: 'This is a basic ecommerce foodApp',
       link: (
@@ -104,7 +104,7 @@ const Mywork = () => {
       ),
     },
     {
-      icon: pusss,
+      icon: c,
       name: 'AirBnb App',
       desc: 'A simple metabnb App',
       link: (
@@ -120,11 +120,9 @@ const Mywork = () => {
     },
   ];
 
-  // const groupSize = []; // Number of cards to display in each group
 
-  // Split the projectList into groups of `groupSize`
   const groupedProjects = projectList.reduce((result, item, index) => {
-    const groupIndex = Math.floor(index );
+    const groupIndex = Math.floor(index / 3); // Display 3 cards per group
     if (!result[groupIndex]) {
       result[groupIndex] = [];
     }
@@ -133,16 +131,12 @@ const Mywork = () => {
   }, []);
 
   return (
-    
-     <>
-     
      <Container>
-     <div className='head'>
-     <h1 className="pro">PROJECTS</h1>
-      <p className="pro">These are some interesting and fun projects I have worked on</p>
-     </div>
+      <div className="head">
+        <h1 className="pro">PROJECTS</h1>
+        <p className="pro">These are some interesting and fun projects I have worked on</p>
+      </div>
       <section className="projects">
-    
         <Carousel
           showThumbs={false}
           showIndicators={false}
@@ -165,7 +159,6 @@ const Mywork = () => {
             )
           }
         >
-          
           {groupedProjects.map((group, groupIndex) => (
             <div key={groupIndex} className="carousel-group">
               {group.map((item, itemIndex) => (
@@ -179,49 +172,43 @@ const Mywork = () => {
               ))}
             </div>
           ))}
-          
         </Carousel>
         <div className="links">
-        <ul>
-          <li>
-            <a
-            className="flat-button"
-              target="_blank"
-              rel="noreferrer"
-              href="https://certificate.terrahq.co/75012M25I16RUE14"
-            >
-              SideHustle Front-end web development Certificate
-            </a>
-          </li>
-          <li>
-            <a
-            className="flat-button"
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.udemy.com/certificate/UC-e5edf5b8-553d-40bf-b4d4-633fc49f49d8/"
-            >
-              Udemy Front-end web development Certificate
-            </a>
-          </li>
-          <li>
-            <a
-            className="flat-button"
-              target="_blank"
-              rel="noreferrer"
-              href="https://www.udemy.com/certificate/UC-3f24dc78-fc31-429f-bf02-73452f807cc7/"
-            >
-              Udemy JavaScript Certificate
-            </a>
-          </li>
-        </ul>
-      </div>
-      
+          <ul>
+            <li>
+              <a
+                className="flat-button"
+                target="_blank"
+                rel="noreferrer"
+                href="https://certificate.terrahq.co/75012M25I16RUE14"
+              >
+                SideHustle Front-end web development Certificate
+              </a>
+            </li>
+            <li>
+              <a
+                className="flat-button"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.udemy.com/certificate/UC-e5edf5b8-553d-40bf-b4d4-633fc49f49d8/"
+              >
+                Udemy Front-end web development Certificate
+              </a>
+            </li>
+            <li>
+              <a
+                className="flat-button"
+                target="_blank"
+                rel="noreferrer"
+                href="https://www.udemy.com/certificate/UC-3f24dc78-fc31-429f-bf02-73452f807cc7/"
+              >
+                Udemy JavaScript Certificate
+              </a>
+            </li>
+          </ul>
+        </div>
       </section>
-     
-      </Container>
-      
-     </>
-    
+    </Container>  
   );
 };
 

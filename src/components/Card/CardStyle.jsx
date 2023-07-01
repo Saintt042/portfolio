@@ -10,13 +10,6 @@ export const Container = styled.div`
   margin-bottom: 15px;
   
   cursor: pointer;
-  :hover {
-    // border: 2px solid white;
-    box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
-    transform: scale(1.05);
-  }
 
   figure {
     width: 100%;
@@ -41,7 +34,7 @@ export const Container = styled.div`
     }
 
     p {
-      font-size: clamp(1rem, 1.5vw, 1rem);
+      font-size: clamp(0.7rem, 1.5vw, 1rem);
       margin-top: 5px;
 
     }

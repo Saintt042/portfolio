@@ -1,11 +1,15 @@
-import { useEffect, useState, useRef } from 'react';
-import Loader from 'react-loaders';
-import AnimatedLetters from '../AnimatedLetters/animatedLetters';
-import './Contact.scss';
+import { useEffect, useState, useRef } from 'react'
+import Loader from 'react-loaders'
+import AnimatedLetters from '../AnimatedLetters/animatedLetters'
+import './Contact.scss'
 import emailjs from '@emailjs/browser'
 
-
 const Contact = () => {
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+
   const [letterClass, setLetterClass] = useState('text-animate')
   const refForm = useRef()
   useEffect(() => {
@@ -14,25 +18,32 @@ const Contact = () => {
     }, 3000)
   }, [])
 
-  const sendEmail = (e) =>{
+  const sendEmail = (e) => {
     e.preventDefault()
-    
-    emailjs   
-    .sendForm(
+
+    const templateParams = {
+      name,
+      email,
+      subject,
+      message,
+    }
+
+    emailjs
+      .sendForm(
         'gmail',
         'template_q0uch08',
-        refForm.current,
+        templateParams,
         'ekKvxC14WvHh9iJqe'
-    )
-    .then (
+      )
+      .then(
         () => {
-            alert('Message successfully sent!')
-            window.location.reload(false)
+          alert('Message successfully sent!')
+          window.location.reload(false)
         },
         () => {
-            alert('Failed to send the message, please try again')
+          alert('Failed to send the message, please try again')
         }
-    )
+      )
   }
 
   return (
@@ -55,10 +66,19 @@ const Contact = () => {
             <form action="submit" ref={refForm} onSubmit={sendEmail}>
               <ul>
                 <li className="half">
-                  <input type="text" name="name" placeholder="Name" required />
+                  <input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    name="name"
+                    placeholder="Name"
+                    required
+                  />
                 </li>
                 <li className="half">
                   <input
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     type="email"
                     name="email"
                     placeholder="Email"
@@ -66,23 +86,35 @@ const Contact = () => {
                   />
                 </li>
                 <li>
-                  <input type="text" placeholder="Subject" name="subject" />
+                  <input
+                    type="text"
+                    placeholder="Subject"
+                    name="subject"
+                    value={subject}
+                    onChange={(e) => setSubject(e.target.value)}
+                  />
                 </li>
                 <li>
                   <textarea
                     placeholder="Message"
                     name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
                     required
                   ></textarea>
                 </li>
                 <li>
-                  <input type="submit" className="flat-button" value="SEND" />
+                  <input
+                    type="submit"
+                    className="flat-button"
+                    onSubmit={sendEmail}
+                  />
                 </li>
               </ul>
             </form>
           </div>
           <div className="info-map">
-            Alinwachukwu Michael 
+            Alinwachukwu Michael
             <br />
             17 Black Street, Ikeja,
             <br />

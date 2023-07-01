@@ -86,7 +86,7 @@
     p {
       font-size: 13px;
       color: #fff;
-      font-family: sans-serif;
+      // font-family: sans-serif;
       font-weight: 300;
       min-width: fit-content;
       animation: pulse 1s;
@@ -121,7 +121,6 @@
   right: 0;
   overflow: visible;
 }
-
 
 .flat-button {
   color: #ffd700;
@@ -209,14 +208,12 @@
   }
 }
 
-@media screen and (max-width: 815px) {
-  .cubespinner {
-    div {
-      width: 80px;
-      height: 80px;
-      font-size: 60px;
-    }
+@media screen and (max-width: 1115px) {
+  .stage-cube-cont {
+    top: 100%;
+  }
 
+  .cubespinner {
     .face1 {
       transform: translateZ(50px);
     }
@@ -243,29 +240,77 @@
   .about-page,
   .contact-page {
     .text-zone {
-      left: 15%;
+      left: 14%;
     }
   }
-}
-@media screen and (max-width: 575px) {
+
+  .flat-button {
+    font-size: 1rem;
+    padding: 10px 12px;
+  }
   .about-page,
   .contact-page {
     .text-zone {
       width: 90%;
-      left: 20%;
-      top: 35%;
+      left: 13.5%;
+      top: 55%;
       h1 {
-        font-size: 35px;
+        font-size: 3rem;
 
         &::after {
           left: -10px;
         }
       }
       p {
-        font-size: 12px;
+        font-size: 1rem;
       }
     }
   }
+
+  .container {
+    margin-left: 2%;
+    width: 90%;
+    height: 70%;
+  }
+
+  .stage-cube-cont {
+    height: 50%;
+    top: 100%;
+    right: 13%;
+  }
+
+  .cubespinner {
+    div {
+      width: 150px;
+      height: 150px;
+    }
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .flat-button {
+    font-size: 0.7rem;
+    padding: 10px 12px;
+  }
+  .about-page,
+  .contact-page {
+    .text-zone {
+      width: 90%;
+      left: 13.5%;
+      top: 35%;
+      h1 {
+        font-size: 3rem;
+
+        &::after {
+          left: -10px;
+        }
+      }
+      p {
+        font-size: 0.7rem;
+      }
+    }
+  }
+
   .container {
     margin-left: 2%;
     width: 90%;
@@ -274,7 +319,7 @@
 
   .stage-cube-cont {
     height: 50%;
-    top: 55%;
+    top: 70%;
     right: 13%;
   }
 
@@ -291,7 +336,7 @@
   .contact-page {
     .text-zone {
       width: 90%;
-      left: 20%;
+      left: 12.5%;
       top: 30%;
       h1 {
         font-size: 17px;
@@ -316,16 +361,6 @@
     height: 50%;
     top: 45%;
     right: 13%;
-  }
-
-  .cubespinner {
-    div {
-      width: 100px;
-      height: 100px;
-    }
-  }
-  .face1 {
-    transform: translateZ(50px);
   }
 
   .cubespinner {
