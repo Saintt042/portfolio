@@ -182,7 +182,7 @@ const Mywork = () => {
                 rel="noreferrer"
                 href="https://certificate.terrahq.co/75012M25I16RUE14"
               >
-                SideHustle Front-end web development Certificate
+                SideHustle Front-end web development
               </a>
             </li>
             <li>
@@ -192,7 +192,7 @@ const Mywork = () => {
                 rel="noreferrer"
                 href="https://www.udemy.com/certificate/UC-e5edf5b8-553d-40bf-b4d4-633fc49f49d8/"
               >
-                Udemy Front-end web development Certificate
+                Udemy Front-end web development
               </a>
             </li>
             <li>
